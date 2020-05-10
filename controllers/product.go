@@ -17,3 +17,14 @@ func GetAllProduct(c *gin.Context) {
 		helpers.RespondJSON(c, 200, products)
 	}
 }
+
+func GetProductById(c *gin.Context) {
+	product := helpers.GetProduct()
+	helpers.RespondJSON(c, 200, product)
+}
+
+func UpdateProduct(c *gin.Context) {
+	helpers.DecQuantity()
+	product := helpers.GetProduct()
+	helpers.RespondJSON(c, 200, product)
+}

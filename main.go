@@ -11,6 +11,7 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	gin.DefaultWriter = ioutil.Discard
 	db := helpers.Init()
+	helpers.InitData()
 	defer db.Close()
 	r := routers.SetupRouter()
 	// running
